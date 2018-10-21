@@ -9,6 +9,7 @@
 
     <!--Micro Phone-->
  <ImageView
+     android:id="@+id/imvMicrophone"
      android:layout_centerInParent="true"
      android:src="@drawable/microphone"
      android:layout_width="wrap_content"
