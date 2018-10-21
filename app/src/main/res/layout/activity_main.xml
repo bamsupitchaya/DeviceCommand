@@ -6,14 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TV"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtLighter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="lighter"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtRadio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="radio"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+        <!--<TextView-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:text="lighter"-->
+        <!--android:textSize="30sp"-->
+        <!--android:layout_height="wrap_content" />-->
+        <!--android:layout_height="wrap_content" />-->
+
+    </LinearLayout>
+
 
     <!--Micro Phone-->
- <ImageView
-     android:id="@+id/imvMicrophone"
-     android:layout_centerInParent="true"
-     android:src="@drawable/microphone"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/imvMicrophone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/microphone" />
 
 
 </RelativeLayout>
