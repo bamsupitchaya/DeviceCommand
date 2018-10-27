@@ -1,6 +1,7 @@
 package com.supitchaya.devicecommand;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,16 +17,17 @@ import com.google.android.gms.common.oob.SignUp;
  * A simple {@link Fragment} subclass.
  */
 public class AuthenFragment extends Fragment {
-
+    @Nullable
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         //SignUp Controller
         signUpController();
-
+       // signInController();
 
     } //Main Method
+
 
     private void signUpController() {
         Button button = getView().findViewById(R.id.btnSignUp);
@@ -37,9 +39,12 @@ public class AuthenFragment extends Fragment {
                         .addToBackStack(null).commit();
             }
         });
-    }
+    } //signUp
 
-    public AuthenFragment() {
+
+
+
+    public AuthenFragment()  {
         // Required empty public constructor
     }
 

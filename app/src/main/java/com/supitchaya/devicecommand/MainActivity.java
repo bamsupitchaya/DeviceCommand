@@ -26,6 +26,8 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+   // public void senttoFragment ()
+
     private String[] strings = new String[]{
             "TV",
             "lighter",
