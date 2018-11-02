@@ -1,16 +1,14 @@
 package com.supitchaya.devicecommand;
 
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.google.android.gms.common.oob.SignUp;
 
 
 /**
@@ -27,7 +25,6 @@ public class AuthenFragment extends Fragment {
        // signInController();
 
     } //Main Method
-
 
     private void signUpController() {
         Button button = getView().findViewById(R.id.btnSignUp);
