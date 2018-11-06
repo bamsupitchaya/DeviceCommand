@@ -1,6 +1,7 @@
 package com.supitchaya.devicecommand;
 
 import android.content.Intent;
+import android.service.autofill.UserData;
 import android.speech.RecognizerIntent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,9 +25,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AuthenFragment.MyFragmentListener {
 
-   // public void senttoFragment ()
+    public void senttoFragment (){
+
+    }
 
     private String[] strings = new String[]{
             "TV",
@@ -173,5 +176,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onButtonOkClick() {
 
+    }
+
+    @Override
+    public void onButtonCloseClick() {
+
+    }
+
+    @Override
+    public void onLoginSuccess(UserData data) {
+
+    }
 } //main class

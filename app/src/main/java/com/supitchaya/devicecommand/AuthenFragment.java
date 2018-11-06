@@ -1,7 +1,9 @@
 package com.supitchaya.devicecommand;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,7 +16,9 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AuthenFragment extends Fragment {
+public class AuthenFragment extends Fragment implements View.OnClickListener {
+    private MyFragmentListener listener;
+
     @Nullable
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -22,7 +26,7 @@ public class AuthenFragment extends Fragment {
 
         //SignUp Controller
         signUpController();
-       // signInController();
+        // signInController();
 
     } //Main Method
 
@@ -32,25 +36,42 @@ public class AuthenFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.contentAuthenFragment,new RegisterFragment())
+                        .beginTransaction().replace(R.id.contentAuthenFragment, new RegisterFragment())
                         .addToBackStack(null).commit();
             }
         });
     } //signUp
 
 
-
-
-    public AuthenFragment()  {
+    public AuthenFragment() {
         // Required empty public constructor
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_authen, container, false);
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id==R.id.btnSignIn){
+            listener.onButtonOkClick();
+        }
     }
 
+
+    public interface MyFragmentListener {
+        public void onButtonOkClick();
+
+        public void onButtonCloseClick();
+
+        public void onLoginSuccess(UserData data);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (MyFragmentListener) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Must implement MyFragmentListener");
+        }
+    }
 }
+
